@@ -2,7 +2,17 @@ export interface Pokemon {
     name: string;
     url: string;
     pokemonIndex: string;
-    sprites: string
+    sprites: {
+        front_default: string
+        other: {
+            home: {
+                front_default: string
+            }
+            "official-artwork": {
+                front_default: string
+            }
+        }
+    }
     types: { type: { name: string } }[]; 
     description: string;
     stats: { 
@@ -10,11 +20,6 @@ export interface Pokemon {
         stat: {
             name: string;
         }
-        // attack: { name: string }
-        // defense: { name: string }
-        // speed: { name: string }
-        // specialAttack: { name: string }
-        // specialDefense: { name: string }
     }[];
     height: string;
     weight: string;
@@ -24,15 +29,6 @@ export interface Pokemon {
     genderRatioFemale: string;
     evs: string;
     hatchSteps: string;
-}
-
-interface PokemonStat {
-    base_stat: number;
-    effort: number;
-    stat: {
-        name: string;
-        url: string;
-    };
 }
 
 export enum TypeColors {
