@@ -24,11 +24,20 @@ export interface Pokemon {
     height: string;
     weight: string;
     eggGroup: string;
-    abilities: string;
+    abilities: {
+        ability: {
+            name: string
+        }
+        is_hidden: boolean
+    }[];
     genderRatioMale: string;
     genderRatioFemale: string;
     evs: string;
     hatchSteps: string;
+}
+
+export interface props {
+    pokemon: Pokemon
 }
 
 export enum TypeColors {

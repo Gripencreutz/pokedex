@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { FC, useEffect, useState } from 'react'
 import {Pokemon} from '../lib/pokemonData'
-import PokemonCardList from '../Components/PokemonCardList'
+import PokemonCardList from '../Components/pokémon/PokemonCardList'
 
 
 
