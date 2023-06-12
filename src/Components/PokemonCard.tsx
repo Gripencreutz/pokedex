@@ -10,8 +10,6 @@ const PokemonCard = ({pokemon} : {pokemon: Pokemon}) => {
     const p: Pokemon = pokemon;
     const primaryTypeColor = TypeColors[p.types[0].type.name as keyof typeof TypeColors]
 
-  
-    
   return (
     <Link to={`/pokemon/${p.name}`}>
         <div style={{ backgroundColor: `#${primaryTypeColor}` }}>
@@ -21,6 +19,16 @@ const PokemonCard = ({pokemon} : {pokemon: Pokemon}) => {
                 {
                     p.types.map((types, index) => {
                         return <li key={index}>{types.type.name}</li>;
+                    })
+                }
+            </ul>
+            <ul>
+                {
+                    p.stats.map(stats => {
+                        return <li>
+                            <strong>{stats.stat.name}</strong>
+                            <p>{stats.base_stat}</p>
+                        </li>
                     })
                 }
             </ul>

@@ -5,14 +5,17 @@ export interface Pokemon {
     sprites: string
     types: { type: { name: string } }[]; 
     description: string;
-    stats: {
-        hp: string;
-        attack: string;
-        defense: string;
-        speed: string;
-        specialAttack: string;
-        specialDefense: string;
-    };
+    stats: { 
+        base_stat: number;
+        stat: {
+            name: string;
+        }
+        // attack: { name: string }
+        // defense: { name: string }
+        // speed: { name: string }
+        // specialAttack: { name: string }
+        // specialDefense: { name: string }
+    }[];
     height: string;
     weight: string;
     eggGroup: string;
@@ -21,6 +24,15 @@ export interface Pokemon {
     genderRatioFemale: string;
     evs: string;
     hatchSteps: string;
+}
+
+interface PokemonStat {
+    base_stat: number;
+    effort: number;
+    stat: {
+        name: string;
+        url: string;
+    };
 }
 
 export enum TypeColors {
@@ -43,3 +55,4 @@ export enum TypeColors {
     steel = 'B5B5C3',
     water = '3295F6',
 }
+
