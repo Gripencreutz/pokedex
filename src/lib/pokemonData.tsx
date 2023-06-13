@@ -1,7 +1,6 @@
 export interface Pokemon {
     name: string;
     url: string;
-    pokemonIndex: string; //?
     sprites: {
         front_default: string
         other: {
@@ -14,26 +13,32 @@ export interface Pokemon {
         }
     }
     types: { type: { name: string } }[]; 
-    description: string; //?
     stats: { 
         base_stat: number;
         stat: {
             name: string;
         }
     }[];
-    height: string; //?
-    weight: string; //?
-    eggGroup: string; //?
+    species: {
+        name: string;
+        url: string;
+    };
     abilities: {
         ability: {
             name: string
         }
         is_hidden: boolean
     }[];
-    genderRatioMale: string; //?
-    genderRatioFemale: string; //?
-    evs: string; //?
-    hatchSteps: string; //?
+}
+
+export interface PokemonSpecies {
+    flavor_text_entries: {
+        flavor_text: string 
+        language: {
+            name: string
+        }
+    }[]
+    pokedex_numbers: {entry_number: number}[]
 }
 
 export interface props {
@@ -61,3 +66,4 @@ export enum TypeColors {
     water = '3295F6',
 }
 
+//todo interface for pokemon species => description, pokeIndex

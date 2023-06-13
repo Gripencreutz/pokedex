@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { FC, useEffect, useState } from 'react'
-import {Pokemon} from '../lib/pokemonData'
-import PokemonCardList from '../Components/pokémon/PokemonCardList'
+import {Pokemon, PokemonSpecies} from '../lib/pokemonData'
+import PokemonCardList from '../Components/PokemonCardList'
 
 
 
@@ -35,7 +35,7 @@ const Gen1:FC = () => {
   return (
     <section>
       <h1>Generation I</h1>
-      {pokemons ? <PokemonCardList pokemonList={pokemons} /> : <h1>Loading</h1>}
+      <PokemonCardList pokemonList={pokemons} />
     </section>
   )
 }

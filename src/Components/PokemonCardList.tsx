@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pokemon } from '../../lib/pokemonData'
+import { Pokemon } from '../lib/pokemonData'
 import PokemonCard from './PokemonCard'
 
 //todo card container with flex/grid
