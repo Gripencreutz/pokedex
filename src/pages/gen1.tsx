@@ -35,7 +35,7 @@ const Gen1:FC = () => {
   return (
     <section>
       <h1>Generation I</h1>
-      <PokemonCardList pokemonList={pokemons}/>
+      {pokemons ? <PokemonCardList pokemonList={pokemons} /> : <h1>Loading</h1>}
     </section>
   )
 }

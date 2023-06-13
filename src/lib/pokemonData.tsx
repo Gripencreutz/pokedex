@@ -1,7 +1,7 @@
 export interface Pokemon {
     name: string;
     url: string;
-    pokemonIndex: string;
+    pokemonIndex: string; //?
     sprites: {
         front_default: string
         other: {
@@ -14,26 +14,26 @@ export interface Pokemon {
         }
     }
     types: { type: { name: string } }[]; 
-    description: string;
+    description: string; //?
     stats: { 
         base_stat: number;
         stat: {
             name: string;
         }
     }[];
-    height: string;
-    weight: string;
-    eggGroup: string;
+    height: string; //?
+    weight: string; //?
+    eggGroup: string; //?
     abilities: {
         ability: {
             name: string
         }
         is_hidden: boolean
     }[];
-    genderRatioMale: string;
-    genderRatioFemale: string;
-    evs: string;
-    hatchSteps: string;
+    genderRatioMale: string; //?
+    genderRatioFemale: string; //?
+    evs: string; //?
+    hatchSteps: string; //?
 }
 
 export interface props {
