@@ -5,7 +5,7 @@ import Type from '../../Components/pokémon/Type'
 
 const PokemonDetails = () => {
   const location = useLocation()
-  const { pokemon, pokedexIndex, pokeDesc, officialArtwork, sprite, primaryTypeColor } = location.state as {
+  const { pokemon, pokedexIndex, pokeDesc, officialArtwork, primaryTypeColor } = location.state as {
     pokemon: Pokemon, 
     pokedexIndex: number, 
     pokeDesc: string,
