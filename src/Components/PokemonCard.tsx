@@ -46,7 +46,7 @@ const PokemonCard = ({pokemon} : {pokemon: Pokemon}) => {
       pathname: `/pokemon/${p.name.toLowerCase()}`,
     }}>
       <div className='card_wrapper' style={{ backgroundColor: `#${primaryTypeColor}` }}>
-        {/* <h3>#{pokedexIndex} {p.name}</h3> */}
+       <p>#{pokedexIndex}</p>
             <img src={imageSrc} />
             {/* <Type pokemon={p}/> */}
            

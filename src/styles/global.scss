@@ -1,5 +1,8 @@
 $background-color: #1f1f1f;
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 body{
-    background-color: $background-color;
+    //background-color: $background-color;
+    font-family: 'Permanent Marker', cursive !important;
+
 }
