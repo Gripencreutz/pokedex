@@ -12,6 +12,7 @@ import Gen8 from './pages/gen8'
 import Gen9 from './pages/gen9'
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import pokemonDetails from './pages/pokémon/pokemonDetails';
 
 const App: FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: FC = () => {
      
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/pokemon/:name" Component={pokemonDetails} />
         <Route path="/gen-1" element={<Gen1 />} />
         <Route path="/gen-2" element={<Gen2 />} />
         <Route path="/gen-3" element={<Gen3 />} />
@@ -30,6 +32,7 @@ const App: FC = () => {
         <Route path="/gen-8" element={<Gen8 />} />
         <Route path="/gen-9" element={<Gen9 />} />
       </Routes>
+      
     <Footer />
     </div>
   );

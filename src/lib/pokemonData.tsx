@@ -1,26 +1,48 @@
 export interface Pokemon {
     name: string;
     url: string;
-    pokemonIndex: string;
-    sprites: string
+    sprites: {
+        front_default: string
+        other: {
+            home: {
+                front_default: string
+            }
+            "official-artwork": {
+                front_default: string
+            }
+        }
+    }
     types: { type: { name: string } }[]; 
-    description: string;
-    stats: {
-        hp: string;
-        attack: string;
-        defense: string;
-        speed: string;
-        specialAttack: string;
-        specialDefense: string;
+    stats: { 
+        base_stat: number;
+        stat: {
+            name: string;
+        }
+    }[];
+    species: {
+        name: string;
+        url: string;
     };
-    height: string;
-    weight: string;
-    eggGroup: string;
-    abilities: string;
-    genderRatioMale: string;
-    genderRatioFemale: string;
-    evs: string;
-    hatchSteps: string;
+    abilities: {
+        ability: {
+            name: string
+        }
+        is_hidden: boolean
+    }[];
+}
+
+export interface PokemonSpecies {
+    flavor_text_entries: {
+        flavor_text: string 
+        language: {
+            name: string
+        }
+    }[]
+    pokedex_numbers: {entry_number: number}[]
+}
+
+export interface props {
+    pokemon: Pokemon
 }
 
 export enum TypeColors {
