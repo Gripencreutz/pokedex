@@ -45,12 +45,11 @@ const PokemonCard = ({pokemon} : {pokemon: Pokemon}) => {
       pathname: `/pokemon/${p.name.toLowerCase()}`,
     }}>
         <div style={{ backgroundColor: `#${primaryTypeColor}` }}>
-            <h3>{p.name} #{pokedexIndex}</h3>
+        <h3>#{pokedexIndex} {p.name}</h3>
             <img src={officialArtwork} />
            
             <Type pokemon={p}/>
-            <Stats pokemon={p}/>
-            <Abilities pokemon={p}/>
+           
         </div>
     </Link>
   )

@@ -65,5 +65,3 @@ export enum TypeColors {
     steel = 'B5B5C3',
     water = '3295F6',
 }
-
-//todo interface for pokemon species => description, pokeIndex
