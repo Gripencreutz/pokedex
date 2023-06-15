@@ -33,8 +33,9 @@ const Gen1:FC = () => {
   }, [])
 
   return (
-    <section>
-      <h1>Generation I</h1>
+    <section className='page'>
+      <h1 className='title'>Pokémon</h1>
+      <h2 className='subTitle'>Generation I</h2>
       <PokemonCardList pokemonList={pokemons} />
     </section>
   )

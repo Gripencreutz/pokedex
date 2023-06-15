@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './styles/global.scss'
+import './styles/page.scss'
 import Home from './pages/home'
 import Gen1 from './pages/gen1'
 import Gen2 from './pages/gen2'

@@ -1,8 +1,45 @@
-$background-color: #1f1f1f;
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+:root{
+    --background-color: #1f1f1f;
+    --bug: #B1C12E;
+    --dark: #4F3A2D;
+    --dragon:#755EDF;
+    --electric:#FCBC17;
+    --fairy:#F4B1F4;
+    --fighting:#D67873;
+    --fire:#E73B0C;
+    --flying:#A3B3F7;
+    --ghost:#6060B2;
+    --grass:#74C236;
+    --ground:#D3B357;
+    --ice:#A3E7FD;
+    --normal:#C8C4BC;
+    --poison:#934594;
+    --psychic:#ED4882;
+    --rock:#B9A156;
+    --steel:#B5B5C3;
+    --water:#3295F6;
+}
 
 body{
     //background-color: $background-color;
     font-family: 'Permanent Marker', cursive !important;
 
+}
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 0.7s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }
