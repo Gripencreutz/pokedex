@@ -13,6 +13,7 @@ const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
 
   const filteredPokemon = searchInput? pokemonList.filter((p: Pokemon) => p.name.toLowerCase().includes(searchInput.toLowerCase())): pokemonList;
 
+  
   return (
     <section className='pokemonList_section'>
       
@@ -25,7 +26,7 @@ const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
         />
       
      
-      <div className='list_wrapper'>
+      <div id='List_wrapper' className='list_wrapper'>
         {filteredPokemon.map((p: Pokemon, index) => (
           <PokemonCard key={index} pokemon={p} />
         ))}

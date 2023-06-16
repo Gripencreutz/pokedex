@@ -24,7 +24,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
           entry.target.classList.add("show");
         }
       });
-    }, { threshold: 0.05 });
+    }, { threshold: 0.1, root: document.querySelector("#list_wrapper"), rootMargin: "10px"});
 
     if (cardRef.current) {
       observer.observe(cardRef.current);
@@ -36,6 +36,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
       }
     };
   }, []);
+
 
   useEffect(() => {
     const fetchPokemonSpecies = async (speciesUrl: string) => {
