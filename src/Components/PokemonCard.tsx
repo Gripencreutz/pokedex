@@ -20,9 +20,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        entry.target.classList.toggle("show", entry.isIntersecting);
       });
     }, { threshold: 0.05, root: document.querySelector("#list_wrapper"), rootMargin: "10px"});
 
