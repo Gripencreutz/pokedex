@@ -71,14 +71,14 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         pathname: `/pokemon/${p.name.toLowerCase()}`,
       }}
     >
-      <div
+     {imageSrc && <div
         ref={cardRef}
         className='card_wrapper hidden'
         style={{ backgroundColor: `#${primaryTypeColor}` }}
       >
         <p>#{pokedexIndex}</p>
         <img src={imageSrc} alt={p.name} loading='lazy'/>
-      </div>
+      </div>}
     </Link>
   );
 };
