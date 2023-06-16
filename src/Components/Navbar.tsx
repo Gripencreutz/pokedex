@@ -38,18 +38,10 @@ const Navbar: FC = () => {
                               <li><Link className="dropdown-item" to="/gen-7">Gen 7</Link></li>
                               <li><Link className="dropdown-item" to="/gen-8">Gen 8</Link></li>
                               <li><Link className="dropdown-item" to="/gen-9">Gen 9</Link></li>
+                              <li><Link className="dropdown-item" to="/special">Special</Link></li>
                           </ul>
                       </li>
-                      {/* <li className="nav-item dropdown">
-                          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Themes
-                          </a>
-                          <ul className="dropdown-menu">
-                              {/* <li><a className="dropdown-item" href="#">Action</a></li>
-
-                              
-                          </ul>
-                      </li> */}
+ 
                   </ul>
               </div>
           </div>

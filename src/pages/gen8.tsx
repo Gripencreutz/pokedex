@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { FC } from 'react'
+import PageTemplate from '../Components/pageTemplate'
 
-const gen8 = () => {
-  return (
-    <div>gen8</div>
-  )
+const Gen8: FC = () => {
+  const url = "https://pokeapi.co/api/v2/pokemon?limit=96&offset=809"
+  const subtitle = "Generation VIII"
+  return <PageTemplate url={url} subtitle={subtitle} />
 }
 
-export default gen8
+export default Gen8
+

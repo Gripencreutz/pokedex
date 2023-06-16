@@ -15,6 +15,7 @@ import Gen9 from './pages/gen9'
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 import pokemonDetails from './pages/pokémon/pokemonDetails';
+import Special from './pages/special';
 
 const App: FC = () => {
   return (
@@ -33,6 +34,8 @@ const App: FC = () => {
         <Route path="/gen-7" element={<Gen7 />} />
         <Route path="/gen-8" element={<Gen8 />} />
         <Route path="/gen-9" element={<Gen9 />} />
+        <Route path="/special" element={<Special />} />
+
       </Routes>
       
     <Footer />

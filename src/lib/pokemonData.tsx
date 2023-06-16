@@ -45,6 +45,11 @@ export interface props {
     pokemon: Pokemon
 }
 
+export interface PageTemplateProps {
+    url: string
+    subtitle: string
+}
+
 export enum TypeColors {
     bug = 'B1C12E',
     dark = '4F3A2D',
