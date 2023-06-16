@@ -24,7 +24,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
           entry.target.classList.add("show");
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 });
 
     if (cardRef.current) {
       observer.observe(cardRef.current);
