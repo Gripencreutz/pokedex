@@ -16,6 +16,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const imageSrc = isMobile ? sprite : officialArtwork;
   const cardRef = useRef<HTMLDivElement>(null);
+  const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -56,6 +57,9 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
       });
   }, [p.species.url]);
 
+  const handleImageLoad = () => {
+    setImageLoaded(true)
+  }
   return (
     <Link
       state={{
@@ -69,14 +73,14 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         pathname: `/pokemon/${p.name.toLowerCase()}`,
       }}
     >
-     {imageSrc && <div
+      <div
         ref={cardRef}
-        className='card_wrapper hidden'
-        style={{ backgroundColor: `#${primaryTypeColor}` }}
+        className={`card_wrapper hidden`}
+        style={{ backgroundColor: `#${primaryTypeColor}`, opacity: imageLoaded ? 1 : 0 }}
       >
         <p>#{pokedexIndex}</p>
-        <img src={imageSrc} alt={p.name} loading='lazy'/>
-      </div>}
+        <img src={imageSrc} alt={p.name} loading='lazy' onLoad={handleImageLoad}/>
+      </div>
     </Link>
   );
 };
