@@ -60,8 +60,12 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   const handleImageLoad = () => {
     setImageLoaded(true)
   }
+
+
+
   return (
     <Link
+      className='link'
       state={{
         pokemon: p,
         pokedexIndex,
@@ -73,11 +77,13 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         pathname: `/pokemon/${p.name.toLowerCase()}`,
       }}
     >
+      {!imageLoaded && <p className='loading'>loading...</p>}
       <div
         ref={cardRef}
         className={`card_wrapper hidden`}
         style={{ backgroundColor: `#${primaryTypeColor}`, opacity: imageLoaded ? 1 : 0 }}
       >
+        
         <p>#{pokedexIndex}</p>
         <img src={imageSrc} alt={p.name} loading='lazy' onLoad={handleImageLoad}/>
       </div>
