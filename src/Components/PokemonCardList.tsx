@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { Pokemon } from '../lib/pokemonData'
 import PokemonCard from './PokemonCard'
 import '../styles/pokemonList.scss'
@@ -6,6 +6,7 @@ import '../styles/pokemonList.scss'
 
 const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
   const [searchInput, setSearchInput] = useState<string>("");
+ 
 
   const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(event.target.value);
@@ -26,7 +27,7 @@ const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
         />
       
      
-      <div id='List_wrapper' className='list_wrapper'>
+      <div className='list_wrapper'>
         {filteredPokemon.map((p: Pokemon, index) => (
           <PokemonCard key={index} pokemon={p} />
         ))}

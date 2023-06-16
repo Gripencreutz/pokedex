@@ -24,7 +24,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
           entry.target.classList.add("show");
         }
       });
-    }, { threshold: 0.1, root: document.querySelector("#list_wrapper"), rootMargin: "10px"});
+    }, { threshold: 0.2, root: document.querySelector("#list_wrapper"), rootMargin: "10px"});
 
     if (cardRef.current) {
       observer.observe(cardRef.current);
@@ -77,8 +77,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         style={{ backgroundColor: `#${primaryTypeColor}` }}
       >
         <p>#{pokedexIndex}</p>
-        <img src={imageSrc} alt={p.name} />
-        {/* <Type pokemon={p}/> */}
+        <img src={imageSrc} alt={p.name} loading='lazy'/>
       </div>
     </Link>
   );
