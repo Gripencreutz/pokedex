@@ -41,3 +41,26 @@ body{
     opacity: 1;
     transform: translateX(0);
 }
+
+
+.pokemonDetails {
+
+
+    .image_wrapper {
+        position: relative;
+
+        .bgDiv {
+            position: absolute;
+            width: 100%;
+            height: 380px;
+            //background: linear-gradient(315deg, white 58%, red 50%);
+        }
+
+        img {
+            position: relative;
+            width: 100%;
+        }
+    }
+
+
+}

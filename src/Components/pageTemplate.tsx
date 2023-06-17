@@ -28,7 +28,7 @@ const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
 
         fetchData();
 
-    }, [])
+    }, [url])
 
     return (
         <section className='page'>

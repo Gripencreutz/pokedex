@@ -61,8 +61,6 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
     setImageLoaded(true)
   }
 
-
-
   return (
     <Link
       className='link'
