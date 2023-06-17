@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './styles/global.scss'
 import './styles/page.scss'
+
 import Home from './pages/home'
 import Gen1 from './pages/gen1'
 import Gen2 from './pages/gen2'
@@ -14,7 +15,7 @@ import Gen8 from './pages/gen8'
 import Gen9 from './pages/gen9'
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import pokemonDetails from './pages/pokémon/pokemonDetails';
+import pokemonDetails from './pages/pokémon/pokemonDetails'
 import Special from './pages/special';
 
 const App: FC = () => {
@@ -38,7 +39,7 @@ const App: FC = () => {
 
       </Routes>
       
-    <Footer />
+    {/* <Footer /> */}
     </div>
   );
 }

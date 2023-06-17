@@ -1,5 +1,5 @@
 import React from 'react'
-import { Pokemon, props } from '../../lib/pokemonData'
+import { Pokemon, TypeColors, props } from '../../lib/pokemonData'
 
 //todo create a badge for types and they should have the same color has the type
 
@@ -10,8 +10,9 @@ const Type: React.FC<props> = ({ pokemon }) => {
            
                 {
                     pokemon.types.map((types, index) => {
-                        return <div className='typeBadge' key={index}>
-                                <p >{types.type.name}</p>
+                        const typeColor = TypeColors[types.type.name as keyof typeof TypeColors];
+                        return <div className='typeBadge' key={index} style={{background: `#${typeColor}`}}>
+                                <strong>{types.type.name}</strong>
                             </div>;
                     })
                 }
