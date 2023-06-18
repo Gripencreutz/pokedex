@@ -29,6 +29,7 @@ export interface Pokemon {
         }
         is_hidden: boolean
     }[];
+    location_area_encounters: string
 }
 
 export interface PokemonSpecies {
@@ -45,9 +46,20 @@ export interface props {
     pokemon: Pokemon
 }
 
+export interface PropsTypeColor {
+    pokemon: Pokemon
+    color: TypeColors
+}
+
 export interface PageTemplateProps {
     url: string
     subtitle: string
+}
+
+export interface EncountersInterface {
+    location_area: {
+        name: string;
+    };
 }
 
 export enum TypeColors {
@@ -69,4 +81,13 @@ export enum TypeColors {
     rock = 'B9A156',
     steel = 'B5B5C3',
     water = '3295F6',
+}
+
+export enum StatsColors {
+    hp = "74C236",
+    attack = "E73B0C",
+    defense = "B5B5C3",
+    "special-attack" = "755EDF",
+    "special-defense"= "F4B1F4",
+    speed = "A3B3F7"
 }

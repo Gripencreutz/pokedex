@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Pokemon, PokemonSpecies, TypeColors } from '../lib/pokemonData';
+import { EncountersInterface, Pokemon, PokemonSpecies, TypeColors } from '../lib/pokemonData';
 import { Link } from 'react-router-dom';
 import Type from './pokémon/Type';
 import axios from 'axios';
@@ -9,6 +9,7 @@ import '../styles/pokemonCard.scss';
 const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   const [pokedexIndex, setPokedexIndex] = useState<number>(0);
   const [pokeDesc, setPokeDesc] = useState<string>("");
+  const [pokeLocations, setPokeLocations] = useState<EncountersInterface[] | null>(null)
   const p: Pokemon = pokemon;
   const primaryTypeColor = TypeColors[p.types[0].type.name as keyof typeof TypeColors];
   const officialArtwork = p.sprites.other['official-artwork'].front_default;
@@ -57,10 +58,36 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
       });
   }, [p.species.url]);
 
+  useEffect(() => {
+    const fetchPokemonLocations = async (locationUrl: string) => {
+      try {
+        const response = await axios.get<EncountersInterface[]>(locationUrl);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching Pokémon species:', error);
+        return null;
+      }
+    };
+
+    fetchPokemonLocations(p.location_area_encounters)
+      .then((res) => {
+        
+        const locations: EncountersInterface[] | undefined = res?.map((item) => ({
+          location_area: {
+            name: item?.location_area?.name ?? "",
+          },
+        }));
+
+       res && setPokeLocations(locations ?? null);
+
+      });
+  }, [p.location_area_encounters]);
+
   const handleImageLoad = () => {
     setImageLoaded(true)
   }
 
+  console.log(pokeLocations)
   return (
     <Link
       className='link'
@@ -70,6 +97,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         pokeDesc,
         officialArtwork,
         primaryTypeColor,
+        pokeLocations
       }}
       to={{
         pathname: `/pokemon/${p.name.toLowerCase()}`,
