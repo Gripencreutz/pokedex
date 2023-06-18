@@ -36,7 +36,6 @@ const App: FC = () => {
         <Route path="/gen-8" element={<Gen8 />} />
         <Route path="/gen-9" element={<Gen9 />} />
         <Route path="/special" element={<Special />} />
-
       </Routes>
       
     {/* <Footer /> */}

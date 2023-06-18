@@ -16,10 +16,9 @@ const Details = () => {
 
     return (
         <section className='details'>
-            {/* <h1 style={{ color: `#${primaryTypeColor}` }}>#{pokedexIndex} {pokemon.name} </h1> */}
             <div className='image_wrapper'>
                 <div className='bgDiv' style={{ background: `linear-gradient(315deg, white 58%, #${primaryTypeColor} 50%)` }}></div>
-                <h2>#{pokedexIndex}</h2>
+                <h2 className='pokeIndex'>#{pokedexIndex}</h2>
                 <img alt='pokemon' src={officialArtwork} /> 
             </div>
             <div className='title_type_wrapper'>
