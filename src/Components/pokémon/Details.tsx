@@ -16,7 +16,7 @@ const Details = () => {
         pokeDesc: string,
         officialArtwork: string, sprite: string, primaryTypeColor: TypeColors, pokeLocations: EncountersInterface[]
     }
-
+console.log(pokemon)
     return (
         <section className='details'>
             <div className='image_wrapper'>

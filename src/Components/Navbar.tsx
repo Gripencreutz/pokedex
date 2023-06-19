@@ -23,7 +23,17 @@ const Navbar: FC = () => {
                       {/* <li className="nav-item">
                           <Link className='nav-link' to={"/gen-2"}>Gen 2</Link>
                       </li> */}
-                      
+                      <li className="nav-item"><Link className='nav-link' to="/gen-1">Gen I</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-2">Gen 2</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-3">Gen 3</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-4">Gen 4</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-5">Gen 5</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-6">Gen 6</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-7">Gen 7</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-8">Gen 8</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/gen-9">Gen 9</Link></li>
+                      <li className="nav-item"><Link className='nav-link' to="/special">Special</Link></li>
+{/*                       
                       <li className="nav-item dropdown">
                           <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Generations
@@ -40,7 +50,7 @@ const Navbar: FC = () => {
                               <li><Link className="dropdown-item" to="/gen-9">Gen 9</Link></li>
                               <li><Link className="dropdown-item" to="/special">Special</Link></li>
                           </ul>
-                      </li>
+                      </li> */}
  
                   </ul>
               </div>
