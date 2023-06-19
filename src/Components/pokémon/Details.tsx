@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import '../../styles/pokemonDetails.scss'
 import { useLocation } from 'react-router'
 import { EncountersInterface, Pokemon, TypeColors } from '../../lib/pokemonData'
@@ -34,7 +34,7 @@ const Details = () => {
            </div>
             <Stats pokemon={pokemon}/>
             <Abilities pokemon={pokemon} color={primaryTypeColor}/>
-            <Encounters locations={pokeLocations}/>
+            {pokeLocations.length ? <Encounters locations={pokeLocations} /> : null}
           
         </section>
     )

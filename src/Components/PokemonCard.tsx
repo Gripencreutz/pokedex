@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { EncountersInterface, Pokemon, PokemonSpecies, TypeColors } from '../lib/pokemonData';
 import { Link } from 'react-router-dom';
-import Type from './pokémon/Type';
 import axios from 'axios';
 import { useMediaQuery } from 'react-responsive';
 import '../styles/pokemonCard.scss';
@@ -87,7 +86,9 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
     setImageLoaded(true)
   }
 
-  console.log(pokeLocations)
+  if(!imageSrc){
+    return null
+  }
   return (
     <Link
       className='link'

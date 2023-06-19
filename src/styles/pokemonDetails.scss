@@ -121,16 +121,13 @@ position: relative;
     .encounters{
         width: 90%;
         margin: 0 auto 50px;
-        
 
         .encounters_contianer {
-                padding-left: 40px;
+                padding-left: 65px;
                 border-radius: 25px;
                 border: 3px solid black;
                 overflow: hidden;
                 box-shadow: -7px 7px black;
-                //max-height: 500px;
-        
         
                 .box{
                     display: flex;

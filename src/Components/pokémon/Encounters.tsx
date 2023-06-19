@@ -1,6 +1,6 @@
 import React from 'react'
-import { EncountersInterface, Pokemon, PropsTypeColor, props } from '../../lib/pokemonData'
-import ball from '../../images/pokeball.png'
+import { EncountersInterface} from '../../lib/pokemonData'
+
 
 interface propsEncounters{
     locations: {
