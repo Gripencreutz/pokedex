@@ -1,6 +1,7 @@
 import React, {FC } from 'react'
 import '../styles/home.scss'
 import RandomPokemon from '../Components/randomPokemon'
+import CallToAction from '../Components/CallToAction'
 
 
 //todo add: Hero, random pokemon section, call to action (poke api ref)
@@ -16,6 +17,7 @@ const Home:FC = () => {
       </div>
     
     <RandomPokemon/>
+    <CallToAction title='Check out Gen I' subTitle='The very first Generation of Pokémon' buttonText='Let´s Go' url='/gen-1'/>
     </div>
   )
 }

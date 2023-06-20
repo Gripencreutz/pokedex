@@ -10,11 +10,12 @@ import {Link} from 'react-router-dom';
 //todo maybe have a theme changer option
 
 const Navbar: FC = () => {
-
+    // navbar - expand - lg
   return (
-      <nav className="navbar navbar-expand-lg bg-danger sticky-top">
+
+      <nav className="navbar bg-danger sticky-top">
           <div className="container-fluid">
-              <Link className="navbar-brand" to="/">Pokédex</Link>
+              <Link className="navbar-brand" to="/">Charibase</Link>
               <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
               </button>

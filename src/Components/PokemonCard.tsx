@@ -13,8 +13,9 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   const primaryTypeColor = TypeColors[p.types[0].type.name as keyof typeof TypeColors];
   const officialArtwork = p.sprites.other['official-artwork'].front_default;
   const sprite = p.sprites.front_default;
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const imageSrc = isMobile ? sprite : officialArtwork;
+  //const isMobile = useMediaQuery({ maxWidth: 768 });
+  // const imageSrc = isMobile ? sprite : officialArtwork;
+  const imageSrc = sprite;
   const cardRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
 

@@ -65,7 +65,7 @@ const RandomPokemon:FC = () => {
 const handleImageLoad = () => {
     setImageLoaded(true)
 }
-  
+
   return (
     <div className='random'>
         <h2>Do you know this one?</h2>
