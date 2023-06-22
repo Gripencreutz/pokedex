@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react'
 import { Pokemon } from '../lib/pokemonData'
 import PokemonCard from './PokemonCard'
 import '../styles/pokemonList.scss'
+import ball from '../images/pokeball.png'
 
 
 const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
@@ -17,7 +18,9 @@ const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
   
   return (
     <section className='pokemonList_section'>
-      
+
+      <div className='search_container'>
+        <img className="ball" src={ball} />
         <input
           className='input_bar'
           type="text"
@@ -25,7 +28,9 @@ const PokemonCardList = ({ pokemonList }: { pokemonList: Pokemon[] }) => {
           onChange={handleSearchInput}
           placeholder="Search Pokemon"
         />
-      
+        <img className="ball" src={ball} />
+      </div>
+     
      
       <div className='list_wrapper'>
         {filteredPokemon.map((p: Pokemon, index) => (

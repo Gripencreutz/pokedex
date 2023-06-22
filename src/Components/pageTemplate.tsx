@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { FC, useEffect, useState } from 'react'
 import { PageTemplateProps,Pokemon} from '../lib/pokemonData'
 import PokemonCardList from '../Components/PokemonCardList'
+import scorch from '../images/scorch.png'
 
 const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
     const [pokemons, pokemonsSet] = useState<Pokemon[]>([])
@@ -32,8 +33,12 @@ const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
 
     return (
         <section className='page'>
-            <h1 className='title'>Pokémon</h1>
-            <h2 className='subTitle'>{subtitle}</h2>
+            <div className='title_container'>
+                <img className='scorch' src={scorch} />
+                <h1 className='title'>Pokémon</h1>
+                <h2 className='subTitle'>{subtitle}</h2>
+            </div>
+            
             <PokemonCardList pokemonList={pokemons} />
         </section>
     )

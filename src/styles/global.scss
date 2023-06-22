@@ -24,21 +24,28 @@
     --steel:#B5B5C3;
     --water:#3295F6;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+}
 html{
    
     @media (min-width: 453px) {
         max-width: 453px;
-            margin: 0 auto;
-            border: 3px solid black;
+        margin: 20px auto;
+        border: 3px solid black;
+        box-shadow: 0px 16px 15px;
     }
 }
 
 body{
     //background-color: $background-color;
     font-family: 'Permanent Marker', cursive !important;
-  
+    margin: 0;
     h1, h2, h3{
         text-align: center;
+        margin: 0;
     }
 
 }

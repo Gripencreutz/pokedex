@@ -2,13 +2,32 @@
 
 .page{
     text-align: center;
-    .title{
+
+    .title_container{
+        position: relative;
+.title {
         font-size: 3rem;
         margin-top: 30px;
         color: var(--fire);
+        position: relative;
+        z-index: 1;
+        text-shadow: 5px 4px black;
     }
 
-    // .subTitle{
-        
-    // }
+    .scorch {
+        width: 100%;
+        position: absolute;
+        top: -45%;
+        left: 0;
+        z-index: 0;
+    }
+
+    .subTitle {
+        color: #ee8328;
+        position: relative;
+        z-index: 1;
+        text-shadow: 3px 4px black;
+    }
+    }
+    
 }

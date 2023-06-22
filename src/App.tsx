@@ -26,15 +26,15 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pokemon/:name" Component={pokemonDetails} />
-        <Route path="/gen-1" element={<Gen1 />} />
-        <Route path="/gen-2" element={<Gen2 />} />
-        <Route path="/gen-3" element={<Gen3 />} />
-        <Route path="/gen-4" element={<Gen4 />} />
-        <Route path="/gen-5" element={<Gen5 />} />
-        <Route path="/gen-6" element={<Gen6 />} />
-        <Route path="/gen-7" element={<Gen7 />} />
-        <Route path="/gen-8" element={<Gen8 />} />
-        <Route path="/gen-9" element={<Gen9 />} />
+        <Route path="/gen-I" element={<Gen1 />} />
+        <Route path="/gen-II" element={<Gen2 />} />
+        <Route path="/gen-III" element={<Gen3 />} />
+        <Route path="/gen-IV" element={<Gen4 />} />
+        <Route path="/gen-V" element={<Gen5 />} />
+        <Route path="/gen-VI" element={<Gen6 />} />
+        <Route path="/gen-VII" element={<Gen7 />} />
+        <Route path="/gen-VIII" element={<Gen8 />} />
+        <Route path="/gen-IX" element={<Gen9 />} />
         <Route path="/special" element={<Special />} />
       </Routes>
       

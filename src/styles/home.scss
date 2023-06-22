@@ -2,12 +2,33 @@
 
 
     .title_wrapper{
-        margin-top: 50px;
+        margin-top: 80px;
         
+
+        div{
+            position: relative;
+
+            h1 {
+                    position: relative;
+                    font-size: clamp(3rem, 14vw, 4rem);
+                    text-shadow: 5px 4px #ee8328;
+                    z-index: 1;
+                }
+            
+                img {
+                    width: 100%;
+                    position: absolute;
+                    top: -60%;
+                    z-index: 0;
+                }
+        }
+       
         p{
             width: 70%;
             text-align: center;
-            margin: 24px auto 50px;
+            margin: 25% auto 70px;
+            font-size: 2rem;
+            color: var(--fire);
         }
     }
 
@@ -22,15 +43,17 @@
         padding: 30px;
         margin: 50px 0;
         background-color: black;
-        color: white;
+        color: #ee8328;
 
         button{
-            border: 2px solid white;
+            border: 2px solid #ee8328;
             background: black;
-            color: white;
+            color: #ee8328;
             border-radius: 25px;
             padding: 0px 10px;
-            box-shadow: 6px 5px white;
+            box-shadow: 6px 5px #ee8328;
+            font-family: inherit;
+            margin-top: 20px;
         }
     }
 }
