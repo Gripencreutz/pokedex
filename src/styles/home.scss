@@ -11,8 +11,9 @@
             h1 {
                     position: relative;
                     font-size: clamp(3rem, 14vw, 4rem);
-                    text-shadow: 5px 4px #ee8328;
+                    text-shadow: 5px 4px black;
                     z-index: 1;
+                    color: #ee8328;
                 }
             
                 img {
