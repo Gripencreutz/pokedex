@@ -3,6 +3,7 @@ import '../styles/home.scss'
 import RandomPokemon from '../Components/randomPokemon'
 import CallToAction from '../Components/CallToAction'
 import scorch from '../images/scorch.png'
+import Navbar from '../Components/Navbar'
 
 
 //todo add: Hero, random pokemon section, call to action (poke api ref)
@@ -11,6 +12,8 @@ const Home:FC = () => {
 
 
   return (
+    <>
+      <Navbar />
     <div className='home'>
       <div className="title_wrapper">
         <div>
@@ -24,6 +27,7 @@ const Home:FC = () => {
     <RandomPokemon/>
     <CallToAction title='Check out Gen I' subTitle='The very first Generation of Pokémon' buttonText='Let´s Go' url='/gen-I'/>
     </div>
+    </>
   )
 }
 

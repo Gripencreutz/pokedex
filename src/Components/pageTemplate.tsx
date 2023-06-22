@@ -3,6 +3,7 @@ import React, { FC, useEffect, useState } from 'react'
 import { PageTemplateProps,Pokemon} from '../lib/pokemonData'
 import PokemonCardList from '../Components/PokemonCardList'
 import scorch from '../images/scorch.png'
+import Navbar from './Navbar'
 
 const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
     const [pokemons, pokemonsSet] = useState<Pokemon[]>([])
@@ -32,6 +33,8 @@ const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
     }, [url])
 
     return (
+        <>
+        <Navbar />
         <section className='page'>
             <div className='title_container'>
                 <img className='scorch' src={scorch} />
@@ -41,6 +44,7 @@ const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
             
             <PokemonCardList pokemonList={pokemons} />
         </section>
+        </>
     )
 }
 

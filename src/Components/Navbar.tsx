@@ -40,7 +40,7 @@ const Navbar: FC = () => {
 
   return (
     <nav className='navbar'>
-          <Link onClick={() => setIsOpen(false)} className='logo' to="/">ScorchDex</Link>
+          <Link onClick={() => handleClick} className='logo' to="/">ScorchDex</Link>
           <div className='hamburgerIcon' onClick={handleClick}>
               <span></span>
               <span></span>
