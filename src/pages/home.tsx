@@ -13,7 +13,6 @@ const Home:FC = () => {
 
   return (
     <>
-      <Navbar />
     <div className='home'>
       <div className="title_wrapper">
         <div>

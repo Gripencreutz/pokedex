@@ -21,7 +21,7 @@ import Special from './pages/special';
 const App: FC = () => {
   return (
     <div className="App">
-    {/* <Navbar /> */}
+    <Navbar />
      
       <Routes>
         <Route path="/" element={<Home />} />
@@ -38,7 +38,7 @@ const App: FC = () => {
         <Route path="/special" element={<Special />} />
       </Routes>
       
-    {/* <Footer /> */}
+    <Footer />
     </div>
   );
 }

@@ -13,8 +13,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   const primaryTypeColor = TypeColors[p.types[0].type.name as keyof typeof TypeColors];
   const officialArtwork = p.sprites.other['official-artwork'].front_default;
   const sprite = p.sprites.front_default;
-  //const isMobile = useMediaQuery({ maxWidth: 768 });
-  // const imageSrc = isMobile ? sprite : officialArtwork;
+  const returnPath = window.location.pathname;
   const imageSrc = sprite;
   const cardRef = useRef<HTMLDivElement>(null);
   const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
@@ -56,7 +55,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         const enDesc = res?.flavor_text_entries?.find((x) => x.language.name === "en")?.flavor_text;
         res && setPokeDesc(enDesc ?? "");
       });
-  }, [p.species.url]);
+  }, []);
 
   useEffect(() => {
     const fetchPokemonLocations = async (locationUrl: string) => {
@@ -81,7 +80,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
        res && setPokeLocations(locations ?? null);
 
       });
-  }, [p.location_area_encounters]);
+  }, []);
 
   const handleImageLoad = () => {
     setImageLoaded(true)
@@ -90,6 +89,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
   if(!imageSrc){
     return null
   }
+
   return (
     <Link
       className='link'
@@ -99,7 +99,8 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
         pokeDesc,
         officialArtwork,
         primaryTypeColor,
-        pokeLocations
+        pokeLocations,
+        returnPath
       }}
       to={{
         pathname: `/pokemon/${p.name.toLowerCase()}`,

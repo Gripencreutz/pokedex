@@ -30,11 +30,10 @@ const PageTemplate:FC<PageTemplateProps> = ({url, subtitle}) => {
 
         fetchData();
 
-    }, [url])
+    }, [])
 
     return (
         <>
-        <Navbar />
         <section className='page'>
             <div className='title_container'>
                 <img className='scorch' src={scorch} />

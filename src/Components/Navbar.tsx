@@ -16,7 +16,6 @@ const Navbar: FC = () => {
         if(isOpen === true){
             setIsOpen(false)
         } else {
-
             setIsOpen(true)
         }
     }
@@ -33,7 +32,7 @@ const Navbar: FC = () => {
         let items = []
         for (let i = 0; i < 9; i++) {
            
-            items.push(<li onClick={handleItemClick} className="item"><Link to={`/gen-${romanNumerals[i]}`}>Gen {romanNumerals[i]}</Link></li>)
+            items.push(<li key={i} onClick={handleItemClick} className="item"><Link to={`/gen-${romanNumerals[i]}`}>Gen {romanNumerals[i]}</Link></li>)
         }
         return items
     }

@@ -142,4 +142,21 @@ position: relative;
                 }
             }
     }
+
+    .returnBtn{
+        position: fixed;
+        display: grid;
+        place-items: center;
+        bottom: 15px;
+        left: 20px;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background-color: var(--general-background-color);
+        box-shadow: 2px 2px black;
+
+        img{
+            width: 50%;
+        }
+    }
 }
