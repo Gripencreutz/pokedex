@@ -24,7 +24,7 @@ const Home:FC = () => {
       </div>
     
     <RandomPokemon/>
-    <CallToAction title='Check out Gen I' subTitle='The very first Generation of Pokémon' buttonText='Let´s Go' url='/gen-I'/>
+    {/* <CallToAction title='Check out Gen I' subTitle='The very first Generation of Pokémon' buttonText='Let´s Go' url='/gen-I'/> */}
     </div>
     </>
   )

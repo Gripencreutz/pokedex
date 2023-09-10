@@ -1,16 +1,15 @@
 import axios from 'axios'
-import React, {FC, useEffect, useState } from 'react'
+import React, {FC, useEffect, useRef, useState } from 'react'
 import { EncountersInterface, Pokemon, PokemonSpecies, TypeColors, props } from '../lib/pokemonData';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
+import '../styles/randomPokemon.scss'
 
 const RandomPokemon:FC = () => {
     const [pokemon, setPokemon] = useState<Pokemon>();
     const [imageLoaded, setImageLoaded] = useState<boolean>(false);
-
+    const [isPressed, setIsPressed] = useState<boolean>(false)
+    const cardRef = useRef<HTMLDivElement>(null)
     const officialArtwork = pokemon?.sprites.other['official-artwork'].front_default
-    const [pokedexIndex, setPokedexIndex] = useState<number>(0);
-    const [pokeDesc, setPokeDesc] = useState<string>("");
-    const [pokeLocations, setPokeLocations] = useState<EncountersInterface[] | null>(null)
     const primaryTypeColor = TypeColors[pokemon?.types[0].type.name as keyof typeof TypeColors];
     
     useEffect(() => {
@@ -21,12 +20,7 @@ const RandomPokemon:FC = () => {
                 const pokemonResult: Pokemon = res.data;
                 setPokemon(pokemonResult)
 
-                const species = await axios.get<PokemonSpecies>(pokemonResult.species.url);
-                setPokedexIndex(species.data.pokedex_numbers[0].entry_number)
-
-                const enDesc = species.data?.flavor_text_entries?.find((x) => x.language.name === "en")?.flavor_text;
-                res && setPokeDesc(enDesc ?? "");
-
+                
             } catch (error) {
                 
             }
@@ -37,49 +31,33 @@ const RandomPokemon:FC = () => {
       
     }, [])
 
-    useEffect(() => {
-        const fetchPokemonLocations = async (locationUrl: string) => {
-            try {
-                const response = await axios.get<EncountersInterface[]>(locationUrl);
-                return response.data;
-            } catch (error) {
-                console.error('Error fetching Pokémon species:', error);
-                return null;
-            }
-        };
-
-       
-        if (pokemon?.location_area_encounters) {
-            fetchPokemonLocations(pokemon.location_area_encounters)
-                .then((res) => {
-                    const locations: EncountersInterface[] | undefined = res?.map((item) => ({
-                        location_area: {
-                            name: item?.location_area?.name ?? "",
-                        },
-                    }));
-                    setPokeLocations(locations ?? null);
-                });
-        }
-    }, [pokemon?.location_area_encounters]);
-
 const handleImageLoad = () => {
     setImageLoaded(true)
 }
 
+const handleClick = () => {
+    if(cardRef.current){
+        cardRef.current.classList.add('active');
+        setIsPressed(!isPressed);
+    }
+}
+
   return (
-    <div className='random'>
-        <h2>Do you know this one?</h2>
-        <Link to={`/pokemon/${pokemon?.name}`} state={{
-              pokemon,
-              pokedexIndex,
-              pokeDesc,
-              officialArtwork,
-              primaryTypeColor,
-              pokeLocations
-        }}>
-              <img alt="pokemon" src={officialArtwork} onLoad={handleImageLoad} style={{ display: `${!imageLoaded ? "none" : ""}` }} />
-        </Link>
-    </div>
+    <div className="flip-card" onClick={handleClick}>
+          <div className="flip-card-inner" ref={cardRef}>
+              <div className='flip-card-front' >
+                 {
+                    imageLoaded && <h1>Who's that pokemon?</h1>
+                 } 
+                  <img alt="pokemon" src={officialArtwork} onLoad={handleImageLoad} style={{ display: `${!imageLoaded ? "none" : ""}`, filter: "brightness(0%)" }} />
+              </div>
+              <div className="flip-card-back" style={{ background: `linear-gradient(135deg, white 50%, #${primaryTypeColor} 50%)` }}>
+                  <h1>It's {pokemon?.name}!</h1>
+                  <img alt="pokemon" src={officialArtwork} onLoad={handleImageLoad} style={{ display: `${!imageLoaded ? "none" : ""}`, filter: "brightness(100%)" }} />
+              </div>
+          </div>
+      </div>
+        
   )
 }
 
